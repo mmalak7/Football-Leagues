@@ -8,8 +8,10 @@
     right: 0;
     height: 60px;
     align-items: center;
+    // border-bottom: 2px solid #b6aeaf;
     box-shadow: 0 3px 10px -8px rgba(0, 0, 0, 0.4);
     transition: 0.3s opacity, 0.3s visibility;
+
     z-index: 20;
     font-family: 'IBM Plex Mono', monospace;
 
@@ -17,6 +19,7 @@
         color: white;
         display: flex;
         justify-content: space-between;
+        height: 60px;
         max-width: 1440px;
         margin: 0 auto;
         padding: 0 100px;
