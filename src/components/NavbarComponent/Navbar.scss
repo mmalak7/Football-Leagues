@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.navbar-wrapper {
+    position: fixed;
+    background-color: #2a2a30;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    align-items: center;
+    box-shadow: 0 3px 10px -8px rgba(0, 0, 0, 0.4);
+    transition: 0.3s opacity, 0.3s visibility;
+    z-index: 20;
+    font-family: 'IBM Plex Mono', monospace;
+
+    .navbar-items {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 100px;
+
+        .navbar-item {
+            align-items: center;
+            margin: auto 0;
+        }
+    }
+}

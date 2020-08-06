@@ -1,10 +1,8 @@
-import React from 'react';
-import './Search.scss';
+import React from "react";
+import "./Search.scss";
 
-export default function Search() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Search = () => {
+  return <></>;
+};
+
+export default Search;
