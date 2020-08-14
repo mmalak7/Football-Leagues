@@ -10,6 +10,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import "./Main.scss";
+import Dropdown from "../DropdownComponent/Dropdown";
+import DropdownItem from "../DropdownComponent/DropdownItem";
+import DropdownMenu from "../DropdownComponent/DropdownMenu";
 
 export default function Main() {
   const [countries, setCountries] = useState([]);
@@ -20,7 +23,6 @@ export default function Main() {
 
   const getCountryLeague = async (country = "England") => {
     await fetch(
-      //   `https://api-football-v1.p.rapidapi.com/v2/leagues/country/england/2018`,
       `https://api-football-v1.p.rapidapi.com/v2/leagues/country/${country}/2018`,
       {
         method: "GET",
@@ -34,7 +36,6 @@ export default function Main() {
       .then((res) => res.json())
       .then((response) => {
         setCountries(response.api.leagues);
-        console.log(response.api.leagues);
       })
       .catch((err) => {
         console.log(err);
@@ -43,8 +44,19 @@ export default function Main() {
 
   return (
     <div className="main-wrapper">
-      <ul className="buttons-wrapper">
-        <li>
+      <Dropdown>
+        <DropdownMenu name="Select Country">
+          <DropdownItem name="England" />
+          <DropdownItem name="Spain" />
+          <DropdownItem name="Germany" />
+          <DropdownItem name="Italy" />
+          <DropdownItem name="France" />
+        </DropdownMenu>
+      </Dropdown>
+      {/* <DropdownItem name="choose leauge">
+          <p>To jest dopiero dropdown</p>
+        </DropdownItem> */}
+      {/* <li>
           <button onClick={() => getCountryLeague("England")}>England</button>
         </li>
         <li>
@@ -58,8 +70,7 @@ export default function Main() {
         </li>
         <li>
           <button onClick={() => getCountryLeague("Italy")}>Italy</button>
-        </li>
-      </ul>
+        </li> */}
       <Grid container spacing={3} className="grid-wrapper">
         {countries.map((country) => (
           <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -68,8 +79,8 @@ export default function Main() {
                 <CardMedia
                   component="img"
                   alt="alt"
-                  width="151"
-                  height="225"
+                  width="auto"
+                  height="200"
                   image={country.logo}
                   title="title"
                 />

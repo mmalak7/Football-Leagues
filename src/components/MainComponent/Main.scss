@@ -1,8 +1,9 @@
 .main-wrapper {
     padding-top: 60px;
+    max-width: 1440px;
     margin: 0 80px;
 }
 
-// .card-wrapper{
-//     max-width: 325px;
-// }
+.card-wrapper{
+    min-height: 380px;
+}
